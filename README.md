@@ -19,7 +19,7 @@ This is a simple web application that calculates age based on the provided birth
 
 1. Clone the repository to your local machine.
    ```bash
-   git clone https://github.com/dhanasekaran/Age_calculator.git
+   git clone https://github.com/DHANASEKARAN2004/Age-calculator
    ```
 
 2. Open `index.html` in your web browser.

@@ -33,7 +33,7 @@ This is a simple web application that calculates age based on the provided birth
 ![Screenshot](https://github.com/user-attachments/assets/a27802bf-1e00-4ea8-a6a1-eff30978c824)
 
 ## Live Link
-[click Here].[([https://dhanasekaran.github.io/Age_calculator/age-calculator-app-main/](https://dhanasekaran2004.github.io/Age-calculator/))]
+[click Here].[[([https://dhanasekaran.github.io/Age_calculator/age-calculator-app-main/](https://dhanasekaran2004.github.io/Age-calculator/))]](https://dhanasekaran2004.github.io/Age-calculator/)
 
 ## Contributing
 

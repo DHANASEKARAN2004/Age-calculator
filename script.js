@@ -1,50 +1,33 @@
-function calculateAge() {
-             const dobInput = document.getElementById('dob').value;
-             
-             // Validation: Check if a date has been selected
-             if (!dobInput) {
-                 alert("Please select your date of birth.");
-                 return;
-             }
-         
-             const dob = new Date(dobInput);
-             const currentDate = new Date();
-         
-             if (dob > currentDate) {
-                 alert("Date of birth cannot be in the future!");
-                 return;
-             }
-         
-             // Age calculation
-             const ageInMilliseconds = currentDate - dob;
-             const ageDate = new Date(ageInMilliseconds);
-             const years = ageDate.getUTCFullYear() - 1970; // Subtract 1970 to get correct year difference
-         
-             let months = currentDate.getMonth() - dob.getMonth();
-             if (months < 0) {
-                 months += 12;
-             }
-         
-             let days = currentDate.getDate() - dob.getDate();
-             if (days < 0) {
-                 const previousMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);
-                 days += previousMonth.getDate();
-                 months--;
-             }
-         
-             // Show the result with animation
-             displayAgeResult(years, months, days);
-         }
-         
-         function displayAgeResult(years, months, days) {
-             const ageResult = document.getElementById('ageResult');
-             
-             // Adding fade-in effect
-             ageResult.style.opacity = 0;
-             ageResult.textContent = `${years} years, ${months} months, ${days} days`;
-             
-             setTimeout(() => {
-                 ageResult.style.opacity = 1;
-             }, 100); // Adding small delay for a smooth transition
-         }
-         
+document.getElementById("ageForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    const dob = new Date(document.getElementById("dob").value);
+    const today = new Date();
+    
+    let ageYears = today.getFullYear() - dob.getFullYear();
+    let ageMonths = today.getMonth() - dob.getMonth();
+    let ageDays = today.getDate() - dob.getDate();
+
+    if (ageDays < 0) {
+        ageMonths--;
+        ageDays += new Date(today.getFullYear(), today.getMonth(), 0).getDate(); // Days in previous month
+    }
+
+    if (ageMonths < 0) {
+        ageYears--;
+        ageMonths += 12;
+    }
+
+    // Update the result in the HTML
+    const ageResult = document.getElementById("ageResult");
+    ageResult.textContent = `${ageYears} years, ${ageMonths} months, ${ageDays} days`;
+
+    // Add animation by toggling the class
+    const resultDiv = document.querySelector('.result');
+    resultDiv.classList.remove('visible'); // Reset opacity before showing new result
+
+    // Trigger reflow to restart the animation
+    void resultDiv.offsetWidth;
+
+    resultDiv.classList.add('visible'); // Fade in the result
+});

@@ -1,82 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-             font-family: 'Arial', sans-serif;
-             background: linear-gradient(to right, #74ebd5, #ACB6E5); /* Soft gradient background */
-             margin: 0;
-             display: flex;
-             justify-content: center;
-             align-items: center;
-             height: 100vh;
-         }
-         
-         .container {
-             background-color: #fff;
-             padding: 30px;
-             border-radius: 15px;
-             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-             text-align: center;
-             max-width: 400px;
-             width: 100%;
-             margin: 0 20px; /* Adding margin for mobile screens */
-         }
-         
-         h1 {
-             color: #444; /* Softer black for the heading */
-             font-size: 2.5rem;
-             margin-bottom: 20px;
-         }
-         
-         .form {
-             margin: 20px 0;
-         }
-         
-         label {
-             font-weight: bold;
-             color: #555; /* Darker gray for labels */
-         }
-         
-         input[type="date"] {
-             padding: 10px;
-             border: 2px solid #007BFF;
-             border-radius: 10px;
-             font-size: 16px;
-             margin-top: 10px;
-             width: 100%;
-             box-sizing: border-box;
-             transition: border-color 0.3s ease;
-         }
-         
-         input[type="date"]:focus {
-             border-color: #0056b3; /* Darker blue on focus */
-             outline: none;
-         }
-         
-         button {
-             background: linear-gradient(to right, #007BFF, #00A8FF); /* Gradient for button */
-             color: #fff;
-             border: none;
-             padding: 12px 25px;
-             border-radius: 25px;
-             font-size: 16px;
-             cursor: pointer;
-             transition: background 0.3s ease;
-             margin-top: 15px;
-         }
-         
-         button:hover {
-             background: linear-gradient(to right, #0056b3, #0080FF); /* Darker on hover */
-         }
-         
-         .result {
-             margin-top: 30px;
-             font-size: 20px;
-             color: #333;
-         }
-         
-         #ageResult {
-             font-weight: bold;
-             color: #007BFF;
-             font-size: 1.8rem;
-             margin-top: 10px;
-         }
-         
-         
+    font-family: 'Poppins', sans-serif; /* Added a more modern font */
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5); /* Gradient background for a modern look */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Increased shadow depth */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.02); /* Slight scaling effect on hover */
+}
+
+h1 {
+    margin-bottom: 25px;
+    color: #333333; /* Darker, more readable text */
+    font-weight: 600; /* Bolder font weight for emphasis */
+}
+
+label {
+    font-size: 18px;
+    color: #555555; /* Slightly darker color for text */
+}
+
+input[type="date"] {
+    margin: 15px 0;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    background-color: #f9f9f9; /* Light background for input */
+    transition: border-color 0.3s;
+}
+
+input[type="date"]:focus {
+    border-color: #74b9ff; /* Highlight border when focused */
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #6c5ce7; /* Attractive purple button */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #a29bfe; /* Lighten color on hover */
+}
+
+.result {
+    margin-top: 30px;
+    font-size: 22px;
+    color: #2d3436;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease-in-out; /* Smooth fade-in transition */
+}
+
+.result.visible {
+    opacity: 1; /* Fully visible when class is added */
+}
+
+p#ageResult {
+    font-weight: bold;
+    color: #0984e3;
+}
+
